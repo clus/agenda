@@ -3,7 +3,6 @@
 //*******************************************//
 
 import java.util.Date;
-import java.util.*;
 
 public class Evenement {
 
@@ -20,6 +19,7 @@ public class Evenement {
 		this.setNom(nom);
 		this.setLieu(lieu);
 		this.setAgenda(agenda);
+		this.getAgenda().getListeEvenements().add(this);
 	}
 
 	//**************************************//

@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.*;
 
 public class AgendaApp {
 
@@ -25,7 +24,7 @@ public class AgendaApp {
 		ag.ajouterAgenda(ag1);
 
 		//Creation d'evenements//
-		Evenement ev1 = new Evenement(1,12/10/2013, "cours d'info","salle 237",ag1);
+		//Evenement ev1 = new Evenement(1,12/10/2013, "cours d'info","salle 237",ag1);
 
 	}
 }
