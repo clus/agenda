@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.*;
 
 public class AgendaApp {
 
@@ -11,6 +12,14 @@ public class AgendaApp {
 
 	public void ajouterAgenda(Agenda a) {
 		this.listeAgendas.add(a);
+	}
+
+	public ArrayList<Agenda> getListeAgendas() {
+		return listeAgendas;
+	}
+
+	public void setListeAgendas(ArrayList<Agenda> listeAgendas) {
+		this.listeAgendas = listeAgendas;
 	}
 
 	public void supprimerAgenda(Agenda a) {

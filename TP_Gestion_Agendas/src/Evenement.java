@@ -21,6 +21,13 @@ public class Evenement {
 		this.setAgenda(agenda);
 		this.getAgenda().getListeEvenements().add(this);
 	}
+	
+	public Evenement(int codeEvenement, Date date, String nom, String lieu){
+		this.setCodeEvenement(codeEvenement);
+		this.setDate(date);
+		this.setNom(nom);
+		this.setLieu(lieu);
+	}
 
 	//**************************************//
 	//*              SETTERS              *//
@@ -67,6 +74,12 @@ public class Evenement {
 		return this.agenda;
 	}
 
-
+//********************************************//
+	public boolean equals(Evenement e) {
+		if(this.codeEvenement==e.codeEvenement)
+			return true;
+		return false;
+			
+	}
 
 }
