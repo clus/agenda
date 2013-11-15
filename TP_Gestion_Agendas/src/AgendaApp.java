@@ -23,9 +23,9 @@ public class AgendaApp {
 		AgendaApp ag = new AgendaApp();		//Creation d'une liste d'agendas
 		Agenda ag1 = new Agenda();
 		ag.ajouterAgenda(ag1);
-		
+
 		//Creation d'evenements//
 		Evenement ev1 = new Evenement(1,12/10/2013, "cours d'info","salle 237",ag1);
-		
+
 	}
 }

@@ -1,6 +1,6 @@
-//***********************************//
-//** Jesus, Clément Dautel - M1 MTI**//
-//***********************************//
+//********************************************//
+//** Jesus Herencia, Clément Dautel - M1 MTI**//
+//*******************************************//
 
 import java.util.Date;
 import java.util.*;
@@ -67,6 +67,6 @@ public class Evenement {
 		return this.agenda;
 	}
 
-	
-	
+
+
 }
