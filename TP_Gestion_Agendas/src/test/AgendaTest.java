@@ -1,3 +1,5 @@
+package test;
+ 
 import static org.junit.Assert.assertEquals;
 
 import java.text.ParseException;
@@ -5,6 +7,10 @@ import java.text.SimpleDateFormat;
 
 import org.junit.Before;
 import org.junit.Test;
+
+import agenda.Agenda;
+import agenda.AgendaApp;
+import agenda.Evenement;
 
 
 public class AgendaTest {
@@ -22,9 +28,9 @@ public class AgendaTest {
 		SimpleDateFormat sdf=new SimpleDateFormat("dd/MM/yyyy");
 
 		try {
-			Evenement ev1 = new Evenement(1,sdf.parse("12/10/2013"), "cours d'info","salle 237",ag1);
-			Evenement ev2 = new Evenement(2,sdf.parse("12/10/2013"), "cours de marketing","salle 230",ag1);
-			Evenement ev3 = new Evenement(3,sdf.parse("12/10/2013"), "cours de finance","salle 231",ag1);
+			new Evenement(1,sdf.parse("15/12/2013"), "cours d'info","salle 237",ag1);
+			new Evenement(2,sdf.parse("15/12/2013"), "cours de marketing","salle 230",ag1);
+			new Evenement(3,sdf.parse("15/12/2013"), "cours de finance","salle 231",ag1);
 
 		} catch (ParseException e) {
 			e.printStackTrace();
@@ -38,7 +44,7 @@ public class AgendaTest {
 		SimpleDateFormat sdf=new SimpleDateFormat("dd/MM/yyyy");
 
 		try {
-			ev1 = new Evenement(1,sdf.parse("12/10/2013"), "cours d'info","salle 237");
+			ev1 = new Evenement(1,sdf.parse("12/12/2013"), "cours d'info","salle 237");
 			
 		} catch (ParseException e) {
 			e.printStackTrace();
@@ -54,12 +60,24 @@ public class AgendaTest {
 		SimpleDateFormat sdf=new SimpleDateFormat("dd/MM/yyyy");
 
 		try {
-			ev1 = new Evenement(0,sdf.parse("12/10/2013"), "cours d'info","salle 237");
+			ev1 = new Evenement(0,sdf.parse("12/12/2013"), "cours d'info","salle 237");
 			
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
 		
 		assertEquals(1, ag1.filtrerEvenement(ev1).size());
+	}
+	
+	@Test
+	public void testerExport() { // Tester l'exportation
+		ag.exporter();
+		assertEquals(1, 1);
+	}
+	
+	@Test
+	public void testerImport() { // Tester l'importation
+		ag.importer();
+		assertEquals(1, 1);
 	}
 }

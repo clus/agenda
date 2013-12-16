@@ -1,3 +1,4 @@
+package agenda;
 import java.util.ArrayList;
 import java.util.*;
 
@@ -71,25 +72,19 @@ public class Agenda {
 	public ArrayList<Evenement> filtrerEvenement(Evenement e) {				//On utilise un objet Evenement pour mettre les parametres de recherche des evenements
 
 		ArrayList<Evenement> listeEvts = new ArrayList<Evenement>();		//Ici on crée une liste d'evenements
-
+		boolean add_ev = true;
 		for(Evenement ev:this.listeEvenements){								//Pour un evenement ev dans la liste d'evenements
-
-			if(e.getNom()!=null && e.getNom().equals(ev.getNom())){			//Si le nom de l'evenement recherché correspond au nom d'un evenement de la liste
-				listeEvts.add(ev);											//On ajoute cet evenement a notre liste
-				continue;
-			}
-			if(e.getDate()!=null && e.getDate().equals(ev.getDate())){		//Si la date de l'evenement recherché correspond à la date d'un evenement de la liste
-				listeEvts.add(ev);											//On ajoute cet evenement a notre liste
-				continue;
-			}
-			if(e.getLieu()!=null && e.getLieu().equals(ev.getLieu())){		//Si le lieu de l'evenement recherché correspond au lieu d'un evenement de la liste
-				listeEvts.add(ev);											//On ajoute cet evenement a notre liste
-				continue;
-			}
+			
 			//			if(e.getAgenda()!=null && e.getAgenda().equals(ev.getAgenda())){
 			//				listeEvts.add(ev);											
 			//				continue;
 			//			}
+			add_ev = add_ev && compareAttributes(e.getNom(), ev.getNom());		//Si le nom de l'evenement recherché correspond au nom d'un evenement de la liste
+			add_ev = add_ev && compareAttributes(e.getDate(), ev.getDate());	//Si la date de l'evenement recherché correspond à la date d'un evenement de la liste
+			add_ev = add_ev && compareAttributes(e.getLieu(), ev.getLieu());	//Si le lieu de l'evenement recherché correspond au lieu d'un evenement de la liste
+			if(add_ev){
+				listeEvts.add(ev);	//On ajoute cet evenement a notre liste
+			}
 		}
 		return listeEvts;
 
@@ -125,6 +120,21 @@ public class Agenda {
 
 			}
 
+		}
+	}
+	
+	private boolean compareAttributes(Object a, Object b){ // methode pour comparer 2 attributes des evenements
+		if(a==null){
+			return true;
+		}
+		else if(b==null){
+			return false;
+		}
+		else if(a.equals(b)){
+			return true;
+		}
+		else{
+			return false;
 		}
 	}
 }
